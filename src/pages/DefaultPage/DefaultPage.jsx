@@ -13,8 +13,8 @@ const DefaultPage = (props) => {
           handleLogout={props.handleLogout}
         />
         <div className="flex-h align-flex-end">
-            <Link to="/login" className='NavBar-link'>LOG IN</Link>
-            <Link to="/signup" className='NavBar-link'>SIGN UP</Link>
+            <h1>I will put a list of events here soon.</h1>
+            <h2>I will add a list of users here soon as I implement the api</h2>
         </div>
         <footer className='header-footer'>
           Copyright 2020
