@@ -8,13 +8,16 @@ import LoginPage from '../LoginPage/LoginPage';
 const DefaultPage = (props) => {
     return (
       <div className="DefaultPage">
+        <h5>Making remote group delivery meals possible!</h5>
         <NavBar 
           user={props.user}
           handleLogout={props.handleLogout}
         />
         <div className="flex-h align-flex-end">
-            <h1>I will put a list of events here soon.</h1>
-            <h2>I will add a list of users here soon as I implement the api</h2>
+            <Link to="/login" className='NavBar-link'>LOG IN</Link>
+            <Link to="/signup" className='NavBar-link'>SIGN UP</Link>
+            <Link to="create-new-event" className='NavBar-link'>Creat new Event</Link>
+            <Link to="add-guests" className='NavBar-link'>Add Guests</Link>
         </div>
         <footer className='header-footer'>
           Copyright 2020
