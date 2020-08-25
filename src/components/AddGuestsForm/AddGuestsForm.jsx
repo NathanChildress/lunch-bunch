@@ -10,10 +10,8 @@ const AddGuestsForm = (props) => {
             <input type="text" name="address" value="" />
             <br/>
             <button>Add new guest</button>
-          
-          </form>
+        </form>
     )
 }
-
 
 export default AddGuestsForm;

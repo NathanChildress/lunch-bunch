@@ -13,7 +13,7 @@ const GuestsTable = () => (
       <tbody>
         <tr>
           <td>Name data</td>
-          <td>Username data</td>
+          <td>Address data</td>
           <td>
             <button>Edit</button>
             <button>Delete</button>
