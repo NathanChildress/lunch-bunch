@@ -18,7 +18,6 @@ const DefaultPage = (props) => {
             <Link to="/signup" className='NavBar-link'>SIGN UP</Link>
             <Link to="create-new-event" className='NavBar-link'>Creat new Event</Link>
             <Link to="add-guests" className='NavBar-link'>Add Guests</Link>
-
         </div>
         <footer className='header-footer'>
           Copyright 2020

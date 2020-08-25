@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
+  name: String,
   owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   eventTime: Date,
   deliveries: [{type: mongoose.Schema.Types.ObjectId, ref: 'Delivery'}],
-  users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+  attendees: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
   desc: String,
 }, {
   timestamps: true
