@@ -4,12 +4,13 @@ import tokenService from './tokenService';
 const BASE_URL = '/api/events'
 
 export default {
-    index,
+    getEvents,
+    delEvent,
     create
 }
 
-function index() {
-    return fetch(BASE_URL).then(res => res.json);
+function getEvents() {
+    return fetch(BASE_URL).then(res => res.json());
 }
 
 function create(event) {
@@ -22,4 +23,17 @@ function create(event) {
         body: JSON.stringify(event)
     };
     return fetch(BASE_URL, options).then(res => res.json());
+}
+
+function delEvent(eventId) {
+    const options = {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization':'Bearer ' + tokenService.getToken()
+        },
+        body: eventId
+    };
+    console.log(BASE_URL + `/${eventId}/delete`);
+    return fetch((BASE_URL + `/${eventId}/delete`), options).then(res => res.json());
 }

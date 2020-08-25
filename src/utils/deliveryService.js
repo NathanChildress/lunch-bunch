@@ -9,17 +9,17 @@ export default {
 }
 
 function index() {
-    return fetch(BASE_URL).then(res => res.json);
+    return fetch(BASE_URL).then(res => res.json());
 }
 
-function create(event) {
+function create(delivery) {
     const options = {
         method: 'POST',
         headers: {
             'Content-type': 'application/json',
             'Authorization':'Bearer ' + tokenService.getToken()
         },
-        body: JSON.stringify(event)
+        body: JSON.stringify(delivery)
     };
     return fetch(BASE_URL, options).then(res => res.json());
 }

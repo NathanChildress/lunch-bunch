@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import CreateNewEventPage from '../CreateNewEventPage/CreateNewEventPage';
 import DefaultPage from '../DefaultPage/DefaultPage'
 import userService from '../../utils/userService';
+import eventService from '../../utils/eventsService';
 import AddGuestsPage from '../AddGuestsPage/AddGuestsPage';
 
 
@@ -17,6 +18,7 @@ class App extends Component {
     this.state = {
       ...this.getInitialState(), 
       user: userService.getUser(),
+      events: {},
     };
   }
 
@@ -36,6 +38,30 @@ class App extends Component {
       userService.logout();
       this.setState({ user: null });
     }
+
+    handleGetEvents (events) {
+      this.setState({ events });  
+    }
+
+    async handleTestEvents () {
+      // await eventService.create({
+      //   "name" : "Test Event",
+      //   "desc" : "this is another test event created from React APIzz"
+      // })
+      await eventService.delEvent("5f45792c9113a094f768119c");
+    }
+    
+
+    
+    /*-- Event Hooks--*/
+    async componentDidMount() {
+      this.handleTestEvents();
+      const events = await eventService.getEvents();
+      console.log(`Events: = ${events}`)
+      this.setState({ events }); 
+    }
+
+   
 
 
 

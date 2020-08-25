@@ -15,6 +15,7 @@ async function create (req, res) {
     } catch(err) {
         res.json({err});
     }
+    res.json("success");
 }
 
 async function show(req, res) {
@@ -33,10 +34,10 @@ async function show(req, res) {
 async function index(req, res) {
     console.log("Index of Events")
     try {
-        const events = await Event.find({})
-            .populate('owner')
-            .populate('attendees')
-            .populate('deliveries');
+        const events = await Event.find({});
+            // .populate('owner')
+            // .populate('attendees')
+            // .populate('deliveries');
         res.json(events)
     } catch(err) {
         res.json({err});
