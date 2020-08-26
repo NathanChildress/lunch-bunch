@@ -8,7 +8,6 @@ const CreateNewEventPage = (props) => {
         <div>
             <h2>Create New Delivery Event</h2>
             <EventNameInput />
-            <EventTimeDateInput />
             <Link to="add-guests" className='NavBar-link'>Next: Add Guests</Link>
         </div>
     )
