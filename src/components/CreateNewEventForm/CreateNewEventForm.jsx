@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import eventsService from '../../utils/eventsService';
 
-class EventNameInput extends React.Component {
+class CreateNewEventForm extends React.Component {
     constructor(props) {
         super(props);
         this.state= {};
@@ -48,10 +48,8 @@ class EventNameInput extends React.Component {
             <input type="datetime-local" name="eventTime" onChange={this.handleChange}/>
             <input type="submit" value="Submit" onChange={this.handleChange}/> <br/>
         </form>
-        
-    
         );
     }
 }
 
-export default EventNameInput;
+export default CreateNewEventForm;
