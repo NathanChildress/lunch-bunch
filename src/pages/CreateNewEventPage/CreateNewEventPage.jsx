@@ -6,7 +6,9 @@ const CreateNewEventPage = (props) => {
     return (
         <div>
             <h2>Create New Delivery Event</h2>
-            <EventNameInput />
+            <EventNameInput 
+                user={props.user}
+                />
             <EventTimeDateInput />
         </div>
     )

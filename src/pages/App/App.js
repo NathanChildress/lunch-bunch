@@ -43,12 +43,17 @@ class App extends Component {
       this.setState({ events });  
     }
 
+    /*----Handle Events----*/
+    handleNewEvent = () => {
+
+    }
+
     async handleTestEvents () {
       // await eventService.create({
       //   "name" : "Test Event",
       //   "desc" : "this is another test event created from React APIzz"
       // })
-      await eventService.delEvent("5f45792c9113a094f768119c");
+      eventService.delEvent("5f45792c9113a094f768119c");
     }
     
 
@@ -91,8 +96,11 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-          <Route exact path='/create-new-event' render={() => 
-            <CreateNewEventPage/>
+          <Route exact path='/create-new-event' render={( {history} ) => 
+            <CreateNewEventPage
+              history={history}
+              user={this.state.user}
+            />
           }
           />
            <Route exact path='/add-guests' render={() => 

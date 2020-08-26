@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import eventsService from '../../utils/eventsService';
 
 class EventNameInput extends React.Component {
     constructor(props) {
@@ -13,9 +14,17 @@ class EventNameInput extends React.Component {
         this.setState({ value: event.target.value });
     }
 
-    handleSubmit(event) {
+    handleSubmit = async(event) => {
         alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
+        try {
+            await eventsService.create({
+                "name": this.state.value,
+                "owner": this.props.user._id,
+            });
+        } catch(err) {
+            console.log(err)
+        }
       }
 
     render () {
