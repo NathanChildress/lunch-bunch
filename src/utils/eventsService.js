@@ -6,6 +6,7 @@ const BASE_URL = '/api/events'
 export default {
     getEvents,
     delEvent,
+    updateEvent,
     create
 }
 
@@ -16,6 +17,18 @@ function getEvents() {
 function create(event) {
     const options = {
         method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization':'Bearer ' + tokenService.getToken()
+        },
+        body: JSON.stringify(event)
+    };
+    return fetch(BASE_URL, options).then(res => res.json());
+}
+
+function updateEvent(event) {
+    const options = {
+        method: 'PUT',
         headers: {
             'Content-type': 'application/json',
             'Authorization':'Bearer ' + tokenService.getToken()

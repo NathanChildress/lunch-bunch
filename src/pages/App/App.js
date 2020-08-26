@@ -11,6 +11,7 @@ import AddGuestsPage from '../AddGuestsPage/AddGuestsPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import AddFoodOrderPage from '../AddFoodOrderPage/AddFoodOrderPage';
 import OrderConfirmationPage from '../OrderConfirmationPage/OrderConfirmationPage';
+import yelpService from '../../utils/yelpService';
 
 
 
@@ -57,6 +58,8 @@ class App extends Component {
       //   "desc" : "this is another test event created from React APIzz"
       // })
       eventService.delEvent("5f45792c9113a094f768119c");
+      const lunchlists = await yelpService.index()
+      this.setState({ lunchlists });
     }
     
 
