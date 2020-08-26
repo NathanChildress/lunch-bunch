@@ -8,6 +8,9 @@ import DefaultPage from '../DefaultPage/DefaultPage'
 import userService from '../../utils/userService';
 import eventService from '../../utils/eventsService';
 import AddGuestsPage from '../AddGuestsPage/AddGuestsPage';
+import DashboardPage from '../DashboardPage/DashboardPage';
+import AddFoodOrderPage from '../AddFoodOrderPage/AddFoodOrderPage';
+import OrderConfirmationPage from '../OrderConfirmationPage/OrderConfirmationPage';
 
 
 
@@ -70,7 +73,7 @@ class App extends Component {
     return (
     <div className="App">
       <header className="App-header">
-        <h1>Lunch Bunch</h1>
+        <h1>Lunch Bunch &nbsp; 🍔</h1>
         <Switch>
           <Route exact path='/' render={(props) => 
             <DefaultPage 
@@ -91,12 +94,24 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+            <Route exact path='/dashboard' render={() => 
+             <DashboardPage/>
+           }
+           />
           <Route exact path='/create-new-event' render={() => 
             <CreateNewEventPage/>
           }
           />
            <Route exact path='/add-guests' render={() => 
             <AddGuestsPage/>
+          }
+          />
+           <Route exact path='/add-food-order' render={() => 
+            <AddFoodOrderPage/>
+          }
+          />
+          <Route exact path='/order-confirmation' render={() => 
+            <OrderConfirmationPage/>
           }
           />
         </Switch>
