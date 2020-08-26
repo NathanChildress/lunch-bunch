@@ -10,7 +10,6 @@ const CreateNewEventPage = (props) => {
             <EventNameInput 
                 user={props.user}
                 />
-            <EventTimeDateInput />
             <Link to="add-guests" className='NavBar-link'>Next: Add Guests</Link>
         </div>
     )
