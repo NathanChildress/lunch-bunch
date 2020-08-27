@@ -51,7 +51,9 @@ class CreateNewEventForm extends React.Component {
             <label>
                 Enter Name of Event:&nbsp;
                 <input type="text" name="name" onChange={this.handleChange}/>
-            </label>
+
+            </label><br/><br/>
+
             <label>Delivery Date/Time:&nbsp;</label>
             <input type="datetime-local" name="eventTime" onChange={this.handleChange}/>
             <label> Guest Name

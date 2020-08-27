@@ -1,15 +1,12 @@
-.NavBar {
-  display: flex;
-  justify-content: center;
-  margin: 0 0 20px;
-}
-
-.NavBar-link {
-  margin: 0 10px;
-}
-
 .NavBar-welcome {
-  color: grey;
+  display: block;
+  color: rgb(253, 251, 251);
+  margin-top: 8px;
+  /* font-weight: bold; */
+  font-size: 25px;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
 }
 
 ul {
@@ -17,23 +14,36 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgba(85, 6, 43, 0.63);
 }
 
 li {
-  float: left;
+  float: right;
 }
 
 li a{
   display: block;
-  color: white;
+  color: rgb(189, 185, 185);
+  /* font-weight: bold; */
+  font-size: larger;
   text-align: center;
-  padding: 14px 16px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.AppLogo {
+  float: left;
+  display: block;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 16px;
   text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: rgb(177, 67, 192);
 }
 
 .active {

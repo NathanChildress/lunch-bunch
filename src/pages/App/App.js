@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import CreateNewEventPage from '../CreateNewEventPage/CreateNewEventPage';
 import DefaultPage from '../DefaultPage/DefaultPage'
 import userService from '../../utils/userService';
+import NavBar from '../../components/NavBar/NavBar';
 import eventService from '../../utils/eventsService';
 import AddGuestsPage from '../AddGuestsPage/AddGuestsPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
@@ -82,6 +83,13 @@ class App extends Component {
     render () {
     return (
     <div className="App">
+      <Route exact path='/' render={(props) =>
+        <NavBar 
+           {...props}
+           user={this.state.user}
+           handleLogout={this.handleLogout}
+        />
+      }/>
       <header className="App-header">
         <h1>Lunch Bunch &nbsp; 🍔</h1>
         <Switch>
