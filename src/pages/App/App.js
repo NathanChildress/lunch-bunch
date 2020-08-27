@@ -91,7 +91,6 @@ class App extends Component {
         />
       }/>
       <header className="App-header">
-        <h1>Lunch Bunch &nbsp; 🍔</h1>
         <Switch>
           <Route exact path='/' render={(props) => 
             <DefaultPage 
@@ -153,7 +152,6 @@ class App extends Component {
         </Switch>
       </header>
     </div>
-    
     )
   }
 }
