@@ -12,11 +12,12 @@ module.exports = {
 async function create (req, res) {
     console.log("Create Event")
     try {
-        await Event.create(req.body);
+        const doc1 = await Event.create(req.body);
+        res.json(doc1)
     } catch(err) {
         res.json({err});
     }
-    res.json("success");
+    //res.json("success");
 }
 
 async function show(req, res) {
