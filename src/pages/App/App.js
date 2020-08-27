@@ -138,8 +138,12 @@ class App extends Component {
             />
           }
           />
-           <Route exact path='/add-food-order' render={() => 
-            <AddFoodOrderPage/>
+           <Route exact path='/add-food-order' render={(history) => 
+            <AddFoodOrderPage
+              history={history}
+              user={this.state.user}
+              events={this.state.events}
+            />
           }
           />
           <Route exact path='/order-confirmation' render={() => 
