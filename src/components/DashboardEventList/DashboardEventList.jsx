@@ -1,8 +1,10 @@
 import React from 'react';
+import EventRow from '../EventRow/EventRow';
 
 const DashboardEventList = (props) => {
     return (
     <div >
+       
         <table>
         <thead>
             <tr>
@@ -13,15 +15,14 @@ const DashboardEventList = (props) => {
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Event Name data</td>
-                <td>Guests data</td>
-                <td>Time/Date Data</td>
-                
-                <button>Cancel ❌</button>
-                <button>Edit ✏️</button>
-            
-            </tr>
+            {props.events.map((event, idx) =>
+                <EventRow 
+                    name={event.name} 
+                    eventId={event._id}
+                    eventTime={event.eventTime}
+                    />
+
+            )}
             </tbody>
         </table>
   </div>

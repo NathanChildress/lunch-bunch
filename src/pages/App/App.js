@@ -11,6 +11,7 @@ import AddGuestsPage from '../AddGuestsPage/AddGuestsPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import AddFoodOrderPage from '../AddFoodOrderPage/AddFoodOrderPage';
 import OrderConfirmationPage from '../OrderConfirmationPage/OrderConfirmationPage';
+import yelpService from '../../utils/yelpService';
 
 
 
@@ -21,8 +22,9 @@ class App extends Component {
     this.state = {
       ...this.getInitialState(), 
       user: userService.getUser(),
-      events: {},
+      events: [],
     };
+    //this.handleGetUserEvents = this.handleGetUserEvents.bind(this);
   }
 
   /*----Initialize ----*/
@@ -46,35 +48,39 @@ class App extends Component {
       this.setState({ events });  
     }
 
-    /*----Handle Events----*/
-    handleNewEvent = () => {
-
-    }
-
     async handleTestEvents () {
-      // await eventService.create({
-      //   "name" : "Test Event",
-      //   "desc" : "this is another test event created from React APIzz"
-      // })
+      await eventService.create({
+        "name" : "Test Event",
+        "desc" : "this is another test event created from React APIzz"
+      })
       eventService.delEvent("5f45792c9113a094f768119c");
+      const lunchlists = await yelpService.index()
+      this.setState({ lunchlists });
     }
     
+    /*----Handle Events----*/
+    
+    
+    handleGetUserEvents = () => {
+      const userId = userService.getUser() ? userService.getUser._id : ""
+      const eventsList = eventService.getUserEvents(userId);
+      console.log(`EventsList: = ${JSON.stringify(eventsList)}`)
+      this.setState({ eventsList })
+      
+    }
 
     
     /*-- Event Hooks--*/
     async componentDidMount() {
-      this.handleTestEvents();
+      // this.handleTestEvents();
+      const userReq = this.state.user ? this.state.user._id : '0'
+      this.handleGetUserEvents((userReq));
       const events = await eventService.getEvents();
-      console.log(`Events: = ${events}`)
+      console.log(`Events: = ${JSON.stringify(events)}`)
       this.setState({ events }); 
     }
 
-   
-
-
-
-
-  render () {
+    render () {
     return (
     <div className="App">
       <header className="App-header">
@@ -91,30 +97,38 @@ class App extends Component {
             <SignupPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
+              handleGetUserEvents={this.handleGetUserEvents}
             />
           }/>
           <Route exact path='/login' render={({ history }) => 
             <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
+              handleGetUserEvents={this.handleGetUserEvents}
             />
           }/>
           <Route exact path='/create-new-event' render={( {history} ) => 
             <CreateNewEventPage
               history={history}
+              events={this.state.events}
               user={this.state.user}
             />
           }/>
-            <Route exact path='/dashboard' render={() => 
-             <DashboardPage/>
+            <Route exact path='/dashboard' render={(history) => 
+             <DashboardPage
+             history={history}
+             user={this.state.user}
+             events={this.state.events}
+             />
            }
            />
-          <Route exact path='/create-new-event' render={() => 
-            <CreateNewEventPage/>
-          }
-          />
-           <Route exact path='/add-guests' render={() => 
-            <AddGuestsPage/>
+           <Route exact path='/add-guests' render={(history) => 
+            <AddGuestsPage
+            history={history}
+            user={this.state.user}
+            events={this.state.events}
+            handleGetUserEvents={this.handleGetUserEvents}
+            />
           }
           />
            <Route exact path='/add-food-order' render={() => 

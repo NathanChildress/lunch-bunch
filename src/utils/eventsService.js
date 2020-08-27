@@ -5,17 +5,35 @@ const BASE_URL = '/api/events'
 
 export default {
     getEvents,
+    getUserEvents,
     delEvent,
+    updateEvent,
     create
-}
+};
 
 function getEvents() {
     return fetch(BASE_URL).then(res => res.json());
 }
 
+function getUserEvents(userId) {
+    return fetch(BASE_URL + `/${userId}/user`).then(res => res.json());
+}
+
 function create(event) {
     const options = {
         method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization':'Bearer ' + tokenService.getToken()
+        },
+        body: JSON.stringify(event)
+    };
+    return fetch(BASE_URL, options).then(res => res.json());
+}
+
+function updateEvent(event) {
+    const options = {
+        method: 'PUT',
         headers: {
             'Content-type': 'application/json',
             'Authorization':'Bearer ' + tokenService.getToken()
@@ -31,8 +49,8 @@ function delEvent(eventId) {
         headers: {
             'Content-type': 'application/json',
             'Authorization':'Bearer ' + tokenService.getToken()
-        },
-        body: eventId
+        }
+        
     };
     console.log(BASE_URL + `/${eventId}/delete`);
     return fetch((BASE_URL + `/${eventId}/delete`), options).then(res => res.json());

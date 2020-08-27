@@ -4,4 +4,6 @@ const restaurantsCtrl = require('../../controllers/restaurants');
 
 
 router.get('/', restaurantsCtrl.index);
-router.get('/', restaurantsCtrl.show);
+router.get('/:id', restaurantsCtrl.show);
+
+module.exports = router;
