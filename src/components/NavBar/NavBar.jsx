@@ -6,6 +6,7 @@ const NavBar = (props) => {
   let nav = props.user ?
   <ul>
     <li><a><Link to='' className='NavBar-link' onClick={props.handleLogout}>Log Out</Link></a></li>
+    <li><a><Link to='/dashboard' className='NavBar-link' onClick={props.handleLogout}>Dashboard</Link></a></li>
     <li className='NavBar-welcome'>Hey,  &nbsp;{props.user.name}!</li>
     <li className="AppLogo">Lunch Bunch &nbsp;&nbsp;🍔</li>
   </ul>

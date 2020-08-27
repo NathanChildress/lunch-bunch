@@ -1,7 +1,54 @@
-.LoginPage {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+
+
+body {
+  font-family: 'Open Sans';
+  font-weight: 100;
+  overflow: hidden;
+}
+
+.login-form {
+  background: rgb(83, 14, 110);
+  box-shadow: 0 0 1rem rgb(68, 3, 87);
+  min-height: 15rem;
+  margin: auto;
+  max-width: 140%;
+  padding: 3rem;
+}
+.login-text {
+  color: rgb(253, 252, 252);
+  font-size: 3rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+  text-align: center;
+}
+
+.login-username, .login-password {
+  background: white;
+  border: 0 solid;
+  border-bottom: 1px solid rgba(white, .5);
+  color: rgb(20, 19, 19);
+  display: block;
+  margin: 1rem;
+  padding: .5rem;
+  transition: 250ms background ease-in;
+  width: 20rem;
+  height: 1.5rem;
+  font-size: 20px;
+}
+
+.login-submit {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  display: block;
+  margin: 1rem auto;
+  min-width: 10px;
+  width: 8rem;
+  height: 2.5rem;
+  padding: .25rem;
+  transition: 250ms background ease-in;
+  cursor: pointer;
+  font-size: 25px;
 }
