@@ -9,6 +9,7 @@ const CreateNewEventPage = (props) => {
             <CreateNewEventForm 
                 user={props.user}
                 events={props.events}
+                history={props.history}
                 /> 
             <Link to="add-guests" className='NavBar-link'>Next: Add Guests</Link>
         </div>

@@ -53,7 +53,6 @@ class App extends Component {
         "name" : "Test Event",
         "desc" : "this is another test event created from React APIzz"
       })
-      eventService.delEvent("5f45792c9113a094f768119c");
       const lunchlists = await yelpService.index()
       this.setState({ lunchlists });
     }
