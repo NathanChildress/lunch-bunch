@@ -10,7 +10,9 @@ const DashboardPage = (props) => {
     
     return (
         <div>
-        <DashboardEventList />
+        <DashboardEventList 
+            events={props.events}
+        />
         <Link to="create-new-event" className='NavBar-link'>Create new Event</Link>
         </div>
     )

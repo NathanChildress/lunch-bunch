@@ -8,7 +8,8 @@ const CreateNewEventPage = (props) => {
             <h2>Create New Delivery Event</h2><br/>
             <CreateNewEventForm 
                 user={props.user}
-                /> <br/>
+                events={props.events}
+                /> </br>
             <Link to="add-guests" className='NavBar-link'>Next: Add Guests</Link>
         </div>
     )

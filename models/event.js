@@ -7,6 +7,10 @@ const eventSchema = new Schema({
   eventTime: Date,
   deliveries: [{type: mongoose.Schema.Types.ObjectId, ref: 'Delivery'}],
   attendees: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+  guests: [{
+      name: String,
+      address: String
+    }],
   desc: String,
 }, {
   timestamps: true

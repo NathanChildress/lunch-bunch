@@ -18,6 +18,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 // ROUTES GO HERE
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/events', require('./routes/api/events'));
+app.use('/api/restaurants', require('./routes/api/restaurants'));
+
 
 
 // REACT CATCH ALL

@@ -3,6 +3,7 @@ const router = express.Router();
 const eventsCtrl = require('../../controllers/events');
 
 router.get('/', eventsCtrl.index);
+router.get('/:id/user', eventsCtrl.userGetEvents);
 router.get('/:id/delete', eventsCtrl.delete);
 
 /*------Protected Routes -----*/
