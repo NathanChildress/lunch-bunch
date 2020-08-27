@@ -5,16 +5,17 @@ import './NavBar.css';
 const NavBar = (props) => {
   let nav = props.user ?
   <ul>
-    <li className='NavBar-welcom'>Hey, {props.user.name}!</li><br/>
-    <li><Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link></li>
+    <li><a><Link to='' className='NavBar-link' onClick={props.handleLogout}>Log Out</Link></a></li>
+    <li className='NavBar-welcome'>Hey,  &nbsp;{props.user.name}!</li>
+    <li className="AppLogo">Lunch Bunch &nbsp;&nbsp;🍔</li>
   </ul>
   :
   <ul className='NavBar'>
-    <li><Link to="/login" className='NavBar-link'>LOG IN</Link></li>
-    &nbsp;&nbsp;| &nbsp;&nbsp;
-    <li><Link to="/signup" className='NavBar-link'>SIGN UP</Link></li>
+    <li><a><Link to="/login" className='NavBar-link'>Log In</Link></a></li>
+    <li><a><Link to="/signup" className='NavBar-link'>Sign Up</Link></a></li>
+    <li className="AppLogo">&nbsp;&nbsp;Lunch Bunch &nbsp;&nbsp;🍔</li>
   </ul>;
-
+  
   return (
     <div className = 'NavBar'>
       {nav}
