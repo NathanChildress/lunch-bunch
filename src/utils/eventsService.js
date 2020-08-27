@@ -49,8 +49,8 @@ function delEvent(eventId) {
         headers: {
             'Content-type': 'application/json',
             'Authorization':'Bearer ' + tokenService.getToken()
-        },
-        body: eventId
+        }
+        
     };
     console.log(BASE_URL + `/${eventId}/delete`);
     return fetch((BASE_URL + `/${eventId}/delete`), options).then(res => res.json());
