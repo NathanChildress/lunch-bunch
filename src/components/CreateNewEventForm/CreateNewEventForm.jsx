@@ -45,6 +45,19 @@ class CreateNewEventForm extends React.Component {
         this.props.history.push('/');
       }
 
+      isFormInvalid() {
+        return !(
+                this.state.name 
+                && this.state.eventTime 
+                && this.state.guest1 
+                && this.state.location1
+                && this.state.guest2 
+                && this.state.location2
+                && this.state.guest3
+                && this.state.location3
+                );
+      }
+
     render () {
         return (
         <form onSubmit={this.handleSubmit}>
@@ -56,26 +69,34 @@ class CreateNewEventForm extends React.Component {
 
             <label>Delivery Date/Time:&nbsp;</label>
             <input type="datetime-local" name="eventTime" onChange={this.handleChange}/>
-            <label> Guest Name
-                <input type="text" name="guest1" onChange={this.handleChange}/>
-            </label>
-            <label> Guest Location
-                <input type="text" name="location1" onChange={this.handleChange}/>
-            </label>
-            <label> Guest Name
-                <input type="text" name="guest2" onChange={this.handleChange}/>
-            </label>
-            <label> Guest Location
-                <input type="text" name="location2" onChange={this.handleChange}/>
-            </label>
-            <label> Guest Name
-            <input type="text" name="guest3" onChange={this.handleChange}/>
-            </label>
-            <label> Guest Location
-                <input type="text" name="location3" onChange={this.handleChange}/>
-            </label>
+            <table>
+                <tr>
+                <label> Guest Name
+                    <input type="text" name="guest1" onChange={this.handleChange}/>
+                </label>
+                <label> Guest Location
+                    <input type="text" name="location1" onChange={this.handleChange}/>
+                </label>
+            </tr>
+            <tr>
+                <label> Guest Name
+                    <input type="text" name="guest2" onChange={this.handleChange}/>
+                </label>
+                <label> Guest Location
+                    <input type="text" name="location2" onChange={this.handleChange}/>
+                </label>
+            </tr>
+            <tr>
+                <label> Guest Name
+                <input type="text" name="guest3" onChange={this.handleChange}/>
+                </label>
+                <label> Guest Location
+                    <input type="text" name="location3" onChange={this.handleChange}/>
+                </label>
+            </tr>
+            </table>
             
-            <button className="btn btn-default" >Create Event</button>
+            <button className="btn btn-default" disabled={this.isFormInvalid()}>Create Event</button>
              <br/>
         </form>
         );
