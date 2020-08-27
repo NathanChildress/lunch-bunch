@@ -5,10 +5,10 @@ import CreateNewEventForm from '../../components/CreateNewEventForm/CreateNewEve
 const CreateNewEventPage = (props) => {
     return (
         <div>
-            <h2>Create New Delivery Event</h2>
+            <h2>Create New Delivery Event</h2><br/>
             <CreateNewEventForm 
                 user={props.user}
-                />
+                /> <br/>
             <Link to="add-guests" className='NavBar-link'>Next: Add Guests</Link>
         </div>
     )

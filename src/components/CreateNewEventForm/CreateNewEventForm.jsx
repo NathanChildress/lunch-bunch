@@ -33,7 +33,7 @@ class CreateNewEventForm extends React.Component {
             <label>
                 Enter Name of Event:&nbsp;
                 <input type="text" />
-            </label>
+            </label><br/><br/>
             <label>Delivery Date/Time:&nbsp;</label>
             <input type="datetime-local"/>
             <input type="submit" value="Submit" /> <br/>
