@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
+import eventService from '../../utils/eventsService';
 import './LoginPage.css';
 
 class LoginPage extends Component {
@@ -23,7 +24,9 @@ class LoginPage extends Component {
       await userService.login(this.state);
       //let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
-      // Successfully signed up - show GamePage
+      //try to add user filtered events here.
+      this.props.handleGetUserEvents();
+      // Successfully signed up - show dashboard
       this.props.history.push('/');
     } catch (err) {
       // Invalid user data (probably duplicate email)

@@ -1,6 +1,14 @@
 import React from 'react';
 
 const AddGuestsForm = (props) => {
+    
+    // async function seteventsList() {
+    //     const thisList = await props.handleGetUserEvents(props.user._id)
+    //     console.log(`thisList: ${JSON.stringify(thisList)}`)
+    //     return JSON.stringify(thisList)
+    // }
+    // const eventsList = seteventsList()
+    // console.log(`user events list: ${eventsList}`);
     return (
         <form>
             <label>Name:</label>

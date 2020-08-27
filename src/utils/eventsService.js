@@ -5,13 +5,18 @@ const BASE_URL = '/api/events'
 
 export default {
     getEvents,
+    getUserEvents,
     delEvent,
     updateEvent,
     create
-}
+};
 
 function getEvents() {
     return fetch(BASE_URL).then(res => res.json());
+}
+
+function getUserEvents(userId) {
+    return fetch(BASE_URL + `/${userId}/user`).then(res => res.json());
 }
 
 function create(event) {

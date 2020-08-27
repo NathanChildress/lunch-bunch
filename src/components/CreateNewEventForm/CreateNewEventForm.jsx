@@ -30,7 +30,18 @@ class CreateNewEventForm extends React.Component {
             await eventsService.create({
                 "name": this.state.name,
                 "owner": this.props.user._id,
-                "eventTime": this.state.eventTime
+                "eventTime": this.state.eventTime,
+                "guests" : [{
+                    name: "Guest1",
+                    address: "Address1"
+                    },{
+                        name: "Guest2",
+                        address: "Address2"
+                    }, {
+                        name: "Guest3",
+                        address: "Address3"
+                    }
+                ]
                 
             });
         } catch(err) {
@@ -47,6 +58,7 @@ class CreateNewEventForm extends React.Component {
             </label>
             <label>Delivery Date/Time:&nbsp;</label>
             <input type="datetime-local" name="eventTime" onChange={this.handleChange}/>
+            
             <button className="btn btn-default" >Create Event</button>
              <br/>
         </form>

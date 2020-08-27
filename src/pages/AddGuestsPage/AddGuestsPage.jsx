@@ -7,7 +7,11 @@ class AddGuestsPage extends React.Component {
         return (
             <div>
                 <h3>Add Your Guests</h3>
-                <AddGuestsForm />
+                <AddGuestsForm 
+                    user={this.props.user}
+                    events={this.props.events}
+                    handleGetUserEvents={this.props.handleGetUserEvents}
+                />
                 <Link to="add-food-order" className='NavBar-link'>Next: Add Order</Link> 
             </div>
         )

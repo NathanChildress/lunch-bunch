@@ -4,6 +4,7 @@ module.exports = {
     create,
     show,
     index,
+    userGetEvents,
     update,
     delete: eventDelete
 }
@@ -44,6 +45,19 @@ async function index(req, res) {
     }
 }
 
+async function userGetEvents(req, res) {
+    console.log("User Index of Events")
+    try {
+        const events = await Event.find({"owner":req.params.id});
+            // .populate('owner')
+            // .populate('attendees')
+            // .populate('deliveries');
+        res.json(events)
+    } catch(err) {
+        res.json({err});
+    }
+}
+
 async function update(req, res) {
     console.log("Update Event")
     try {
@@ -55,13 +69,16 @@ async function update(req, res) {
 }
 
 async function eventDelete(req, res) {
-    console.log(`Delete Event: ${req.body}`)
+    console.log(`Delete Event: ${req.params.id}`)
     try {
-        Event.findByIdAndDelete(req.params.id)
+        Event.findByIdAndDelete(req.params.id, function(err, result){
+            console.log(err)
+            res.json(result)
+        })
 
     } catch(err) {
         res.json(err)
-    }
+    } console.log("success")
 
 }
 
