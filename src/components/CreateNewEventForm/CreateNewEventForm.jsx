@@ -11,14 +11,9 @@ class CreateNewEventForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // handleChange(event) {
-    //     this.setState({ value: event.target.value });
-    // }
     handleChange = (e) => {
-        //this.props.updateMessage('');
         console.log(e.target.name)
         this.setState({
-          // Using ES2015 Computed Property Names
           [e.target.name]: e.target.value
         });
       }
@@ -32,14 +27,14 @@ class CreateNewEventForm extends React.Component {
                 "owner": this.props.user._id,
                 "eventTime": this.state.eventTime,
                 "guests" : [{
-                    name: "Guest1",
-                    address: "Address1"
+                    name: this.state.guest1,
+                    address: this.state.location1
                     },{
-                        name: "Guest2",
-                        address: "Address2"
+                        name: this.state.guest2,
+                        address: this.state.location2
                     }, {
-                        name: "Guest3",
-                        address: "Address3"
+                        name: this.state.guest3,
+                        address: this.state.location3
                     }
                 ]
                 
@@ -47,6 +42,7 @@ class CreateNewEventForm extends React.Component {
         } catch(err) {
             console.log(err)
         }
+        this.props.history.push('/');
       }
 
     render () {
@@ -60,6 +56,24 @@ class CreateNewEventForm extends React.Component {
 
             <label>Delivery Date/Time:&nbsp;</label>
             <input type="datetime-local" name="eventTime" onChange={this.handleChange}/>
+            <label> Guest Name
+                <input type="text" name="guest1" onChange={this.handleChange}/>
+            </label>
+            <label> Guest Location
+                <input type="text" name="location1" onChange={this.handleChange}/>
+            </label>
+            <label> Guest Name
+                <input type="text" name="guest2" onChange={this.handleChange}/>
+            </label>
+            <label> Guest Location
+                <input type="text" name="location2" onChange={this.handleChange}/>
+            </label>
+            <label> Guest Name
+            <input type="text" name="guest3" onChange={this.handleChange}/>
+            </label>
+            <label> Guest Location
+                <input type="text" name="location3" onChange={this.handleChange}/>
+            </label>
             
             <button className="btn btn-default" >Create Event</button>
              <br/>
