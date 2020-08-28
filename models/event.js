@@ -10,7 +10,7 @@ const eventSchema = new Schema({
   guests: [{
       name: String,
       address: String,
-      restraunt: String,
+      restaurant: String,
       menuItem:String,
     }],
   desc: String,

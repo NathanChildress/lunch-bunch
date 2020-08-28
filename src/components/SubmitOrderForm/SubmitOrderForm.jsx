@@ -8,8 +8,9 @@ class SubmitOrderForm extends Component {
         this.state= {
             name: "",
             location: "",
-            restaurant: 3,
-            menuItem: "",
+            restaurant: 0,
+            menuItem: 0,
+            guestOrders: [],
             shops: [
                 {
                     name: "Chipotle",
@@ -44,31 +45,31 @@ class SubmitOrderForm extends Component {
         });
       }
 
+      handleClick = (e) => {
+        let newOrder = {
+            guestId : this.state.guest._id,
+            restaurant : this.state.shops[this.state.restaurant].name,
+            menuItem : this.state.shops[this.state.restaurant].items[this.state.items]
+        }
+        const currentOrders = this.state.guestOrders.concat(newOrder);
+        this.setState({ guestOrders : currentOrders })
+
+          
+      }
+
       handleSubmit = async(event) => {
         console.log('A name was submitted: ' + this.state.name);
         event.preventDefault();
         try {
-            await EventsService.updateEvent({
-                "name": this.state.name,
-                "owner": this.props.user._id,
-                "eventTime": this.state.eventTime,
-                "guests" : [{
-                    name: this.state.guest1,
-                    address: this.state.location1
-                    },{
-                        name: this.state.guest2,
-                        address: this.state.location2
-                    }, {
-                        name: this.state.guest3,
-                        address: this.state.location3
-                    }
-                ]
+            console.log("attempting to update")
+            await EventsService.updateEvent(this.props._id, this.state.guest._id, {
+                "guests" : this.state.guestOrders
                 
             });
         } catch(err) {
             console.log(err)
         }
-        this.props.history.push('/dashboard');
+        //this.props.history.push('/dashboard');
       } 
 
       
@@ -100,14 +101,17 @@ class SubmitOrderForm extends Component {
                     <td>
                         <select name="menuItem" >
                         {this.state.shops[this.state.restaurant].items.map((item, idx) =>
-                            <option value={item}> {item} </option> 
+                            <option value={idx}> {idx} </option> 
                             )}
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <button name="guestOrder" onClick={this.handleClick}>Add Guest Order</button>
+                </tr>
                </>
             </table>
-            <Link to="order-confirmation" className='NavBar-link'>
+            <Link to="order-confirmation" className='NavBar-link' onClick={this.handleSubmit}>
             <button>
             
             Submit Order

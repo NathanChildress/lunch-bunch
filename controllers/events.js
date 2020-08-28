@@ -11,6 +11,7 @@ module.exports = {
 
 async function create (req, res) {
     console.log("Create Event")
+    console.log(`Update Event: ${JSON.stringify(req.body)}`)
     try {
         const doc1 = await Event.create(req.body);
         res.json(doc1)
@@ -60,9 +61,9 @@ async function userGetEvents(req, res) {
 }
 
 async function update(req, res) {
-    console.log("Update Event")
+    console.log(`Update Event: ${JSON.stringify(req.body)}`)
     try {
-        const event = await Event.updateOne(req.params.id, req.body)
+        const event = await Event.updateMany({"_id" : req.params.id, "_id" : req.params.guestId}, {$inc :req.body})
         res.json(event)
     } catch(err) {
         res.json({err})
