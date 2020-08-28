@@ -61,20 +61,35 @@ async function userGetEvents(req, res) {
 }
 
 async function update(req, res) {
-    console.log(`_id: ${req.params.id} guest _id: ${req.params.guestId}`)
-    console.log(`Update Event: ${JSON.stringify(req.body)}`)
+    // console.log(`_id: ${req.params.id} guest _id: ${req.params.guestId}`)
+    // console.log(`Update Event: ${JSON.stringify(req.body)}`)
     try {
-        const event = await Event.finyById(req.params.id)
-        event.guests.set(req.params.id, req.body.guests)
-        event.save((err, orders) => {
-            if (err) {
-                res.json({err})
-            } else {
-                res.json(orders)
-            }
+        
+        await req.body.guests.forEach(guest => {
+            console.log(`trying to save: ${JSON.parse(guest)}`)
+            Event.updateOne({"_id": req.params.id, "guests._id": guest._id}, 
+                {$set: {"guest.$.restaurant": guest.restaurant, "guest.$.menuItem": guest.menuItem}})
         });
-        res.json(event)
+        // let event = await Event.findById(req.params.id)
+        // console.log("trying to save")
+        // event.guests.set(req.params.id, req.body.guests)
+        // console.log(event.guests)
+        // event.save((err, orders) => {
+        //     console.log("trying to save")
+        //     if (err) {
+        //         console.log("there was an error")
+        //         console.log(err)
+        //         res.json({err})
+        //     } else {
+        //         console.log("there was not an error")
+        //         res.json(orders)
+        //     }
+        // });
+        console.log("trying to save")
+    res.json()
     } catch(err) {
+        console.log("there was an error")
+        console.log(err)
         res.json({err})
     }
 }
