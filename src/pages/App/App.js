@@ -80,13 +80,13 @@ class App extends Component {
     render () {
     return (
     <div className="App">
-      <Route exact path='/' render={(props) =>
+
         <NavBar 
-           {...props}
+           {...this.props}
            user={this.state.user}
            handleLogout={this.handleLogout}
         />
-      }/>
+     
       <header className="App-header pages">
         <Switch>
           <Route exact path='/' render={(props) => 
