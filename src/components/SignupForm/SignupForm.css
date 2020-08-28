@@ -16,11 +16,6 @@
     margin-right: 80px;
 }
 
-body {
-  font-family: 'Open Sans';
-  font-weight: 100;
-  overflow: hidden;
-}
 
 .signup-form {
   background: rgb(83, 14, 110);
@@ -30,7 +25,7 @@ body {
   max-width: 140%;
   padding: 1rem;
   padding-bottom: 0rem;
-  margin-top: 220px;
+  margin-top: 100px;
 }
 .signup-text {
   color: rgb(253, 252, 252);
@@ -74,4 +69,8 @@ body {
 .signup-header {
     font-size: 40px;
     font-weight: bold;
+}
+
+img {
+  height: 90px;
 }

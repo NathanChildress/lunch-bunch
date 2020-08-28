@@ -6,18 +6,37 @@ import './DefaultPage.css';
 import LoginPage from '../LoginPage/LoginPage';
 
 const DefaultPage = (props) => {
-    return (
-      <div className="DefaultPage">
-        <h1>Lunch Bunch &nbsp; 🍔</h1>
-        <h5>Making remote group delivery meals possible! <br/> Enjoy a meal together but apart</h5>
+  let nav = props.user ?
+    <div className="DefaultPage">
+
+        <text className="welcome">Welcome {props.user.name}! <br/></text>
+        <text className="appName">Lunch Bunch &nbsp; 🍔</text> <br/>
+        <text className="slogan1">Making remote group delivery meals possible!</text> <br/> <br/>
         <div className="flex-h align-flex-end">
-            <Link to="/login" className='NavBar-link'>LOG IN</Link>
-            &nbsp;&nbsp; | &nbsp;&nbsp;
-            <Link to="/signup" className='NavBar-link'>SIGN UP</Link><br/><br/>
-            <Link to="dashboard" className='NavBar-link'>Dashboard</Link>
+            <Link to="dashboard" className="dashboard-signup">Dashboard</Link> 
         </div>
       </div>
+      :
+      <div className="NavBar">
+      <text>Welcome to <br/></text>
+        <text className="appName">Lunch Bunch &nbsp; 🍔</text> <br/>
+        <text className="slogan1">Making remote group delivery meals possible!</text> <br/><br/>
+        <div>
+        <Link class="defaut" to="/login" className='dashboard-signup'>LOG IN</Link>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <Link to="/signup" className="dashboard-signup">SIGN UP</Link><br/><br/>
+        </div>
+        </div>
+
+    return (
+      <div className = 'NavBar'>
+    {nav}
+  </div>
     );
   };
 
 export default DefaultPage;
+
+
+
+

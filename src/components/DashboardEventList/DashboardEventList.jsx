@@ -1,8 +1,14 @@
 import React from 'react';
 import EventRow from '../EventRow/EventRow';
+import { Link } from 'react-router-dom';
+import './DashboardEventList.css'
+
+
 
 const DashboardEventList = (props) => {
     return (
+    
+
     <div >
        
         <table>
@@ -21,11 +27,11 @@ const DashboardEventList = (props) => {
                     eventId={event._id}
                     eventTime={event.eventTime}
                     />
-
             )}
             </tbody>
         </table>
   </div>
+
     )
 }
 
