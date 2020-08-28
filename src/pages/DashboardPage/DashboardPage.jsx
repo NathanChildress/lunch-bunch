@@ -8,7 +8,7 @@ import './DashboardPage.css';
 const DashboardPage = (props) => {
     return (
         <>
-        <h3 className="order-heading">{props.user.name}'s Dashboard 🍔</h3>
+        <h3 className="order-heading">Dashboard &nbsp;&nbsp;🍔</h3>
          
         <div>
 

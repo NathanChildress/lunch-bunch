@@ -11,11 +11,9 @@ class AddFoodOrderPage extends Component {
             }
         };
 
-
         this.handleChange = this.handleChange.bind(this);
         //this.handleSubmit = this.handleSubmit.bind(this);
     }
-
 
     handleChange = (e) => {
         console.log(e.target.name)
@@ -25,12 +23,10 @@ class AddFoodOrderPage extends Component {
         });
       }
     
-    
-    
     render() {
         return (
             <div>
-                <h3 className="order-heading">Add your Order 🍔</h3>
+                <h3 className="order-heading">Add your Order &nbsp;&nbsp; 🍔</h3>
                 <label className="select-order">Select your event: </label>
                 <select name="event" onChange={this.handleChange}>
                 {(this.props.events || []).map((event, idx) =>
@@ -38,16 +34,11 @@ class AddFoodOrderPage extends Component {
                 )}
                 </select>
                     <br></br>
-                    
-                    
-                
-
                 <SubmitOrderForm 
                     {...this.state.event}
                 />
             </div>
-            
-    )
+        )
     };
 }
 

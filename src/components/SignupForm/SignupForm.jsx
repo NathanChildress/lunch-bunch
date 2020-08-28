@@ -41,9 +41,7 @@ class SignupForm extends Component {
 
   render() {
     return (
-
       <div>
-
         <form className="signup-form" onSubmit={this.handleSubmit} >
         <header className="signup-header">Sign Up</header>
           <p class="signup-text">
