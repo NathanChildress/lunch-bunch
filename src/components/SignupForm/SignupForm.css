@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 
 .cancel-link {
-    border: 1px solid white;
+    border: 1px solid rgb(230, 87, 187);
     background: transparent;
-    color: white;
+    color: rgb(230, 87, 187);
     display: inline-block;
     margin: .1rem auto;
     width: 4rem;
@@ -13,7 +13,7 @@
     cursor: pointer;
     font-size: 18px;
     text-decoration: none;
-    margin-right: 110px;
+    margin-right: 80px;
 }
 
 body {
@@ -62,8 +62,7 @@ body {
   display: inline-block;
   margin: 1rem auto;
   min-width: 10px;
-  /* margin-left: 150px; */
-  width: 8rem; 
+  width: 10rem; 
   height: 2.5rem;
   padding: .25rem;
   transition: 250ms background ease-in;
