@@ -61,9 +61,18 @@ async function userGetEvents(req, res) {
 }
 
 async function update(req, res) {
+    console.log(`_id: ${req.params.id} guest _id: ${req.params.guestId}`)
     console.log(`Update Event: ${JSON.stringify(req.body)}`)
     try {
-        const event = await Event.updateMany({"_id" : req.params.id, "_id" : req.params.guestId}, {$inc :req.body})
+        const event = await Event.finyById(req.params.id)
+        event.guests.set(req.params.id, req.body.guests)
+        event.save((err, orders) => {
+            if (err) {
+                res.json({err})
+            } else {
+                res.json(orders)
+            }
+        });
         res.json(event)
     } catch(err) {
         res.json({err})
