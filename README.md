@@ -7,6 +7,8 @@ Lunch Bunch  will provide teams with an exciting solution that will bring back t
 
 Lunch Bunch is an application for organizers to plan synchronized meal deliveries.
 
+[Click here](https://lunchbunch629.herokuapp.com/) to check it out!
+
 
 ## Technologies used
 
@@ -30,9 +32,11 @@ Lunch Bunch is an application for organizers to plan synchronized meal deliverie
 
 ![](https://i.imgur.com/0MrSyZ0.png)
 
-![](https://i.imgur.com/hVco4R3.png)
+![](https://i.imgur.com/sy8Ki8m.png)
 
-![](https://i.imgur.com/skhfN6Q.png)
+![](https://i.imgur.com/CaVXOZQ.png)
+
+![](https://i.imgur.com/6mB3pCJ.png)
 
 ## Future Features
 
