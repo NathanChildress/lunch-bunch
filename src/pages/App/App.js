@@ -14,9 +14,6 @@ import AddFoodOrderPage from '../AddFoodOrderPage/AddFoodOrderPage';
 import OrderConfirmationPage from '../OrderConfirmationPage/OrderConfirmationPage';
 import yelpService from '../../utils/yelpService';
 
-
-
-
 class App extends Component {
   constructor() {
     super();
