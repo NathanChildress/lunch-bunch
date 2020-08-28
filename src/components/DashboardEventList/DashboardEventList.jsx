@@ -10,14 +10,12 @@ const DashboardEventList = (props) => {
     
 
     <div >
-       
-        <table>
+        <table className="dashboard-list">
         <thead>
             <tr>
-                <th>Event Name</th>
-                <th>Guests</th>
-                <th>Time/Date</th>
-                <th>Actions</th>
+                <th className="dashboard-th">Event Name</th>
+                <th className="dashboard-th">Time/Date</th>
+                <th className="dashboard-th">Actions</th>
             </tr>
             </thead>
             <tbody>

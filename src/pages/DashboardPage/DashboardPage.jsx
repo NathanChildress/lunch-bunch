@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AddGuestsForm from '../../components/AddGuestsForm/AddGuestsForm';
 import { render } from '@testing-library/react';
 import DashboardEventList from '../../components/DashboardEventList/DashboardEventList';
 import './DashboardPage.css';
@@ -9,8 +8,8 @@ import './DashboardPage.css';
 const DashboardPage = (props) => {
     return (
         <>
-        <Link className="dashboard-signup" to='/'>Home</Link>
-      
+        <h3 className="order-heading">Dashboard &nbsp;&nbsp;🍔</h3>
+         
         <div>
 
         <DashboardEventList 
