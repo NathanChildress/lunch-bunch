@@ -13,6 +13,7 @@ const SubmitOrderTally = props => {
                 </tr>
                 </thead>
                 <tbody>
+                    {}
                 <tr>
                     <td className="guest-table-td">test</td>
                     <td className="guest-table-td">test</td>

@@ -51,7 +51,7 @@ class SubmitOrderForm extends Component {
         let newOrder = {
             guestId : this.state.guest._id,
             restaurant : this.state.shops[this.state.restaurant].name,
-            menuItem : this.state.shops[this.state.restaurant].items[this.state.items]
+            menuItem : this.state.shops[this.state.restaurant].items[this.state.menuItem]
         }
         const currentOrders = this.state.guestOrders.concat(newOrder);
         this.setState({ guestOrders : currentOrders })
@@ -107,7 +107,7 @@ class SubmitOrderForm extends Component {
                     <td>
                         <select name="menuItem" >
                         {this.state.shops[this.state.restaurant].items.map((item, idx) =>
-                            <option value={idx}> {idx} </option> 
+                            <option value={idx}> {item} </option> 
                             )}
                         </select>
                     </td>
