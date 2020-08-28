@@ -90,7 +90,7 @@ class App extends Component {
            handleLogout={this.handleLogout}
         />
       }/>
-      <header className="App-header">
+      <header className="App-header pages">
         <Switch>
           <Route exact path='/' render={(props) => 
             <DefaultPage 

@@ -1,0 +1,19 @@
+.new-event-submit {
+border: 2px solid white;
+background: transparent;
+color: white;
+display: inline-block;
+margin: 1rem auto;
+min-width: 10px;
+width: 11rem; 
+height: 2.5rem;
+padding: .25rem;
+transition: 250ms background ease-in;
+cursor: pointer;
+font-size: 30px;
+text-decoration: none;
+}
+
+.home-link {
+    position: relative;
+}

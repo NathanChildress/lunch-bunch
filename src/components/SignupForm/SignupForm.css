@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 
 .cancel-link {
-    border: 1px solid white;
+    border: 1px solid rgb(230, 87, 187);
     background: transparent;
-    color: white;
+    color: rgb(230, 87, 187);
     display: inline-block;
     margin: .1rem auto;
     width: 4rem;
@@ -13,14 +13,9 @@
     cursor: pointer;
     font-size: 18px;
     text-decoration: none;
-    margin-right: 110px;
+    margin-right: 80px;
 }
 
-body {
-  font-family: 'Open Sans';
-  font-weight: 100;
-  overflow: hidden;
-}
 
 .signup-form {
   background: rgb(83, 14, 110);
@@ -30,7 +25,7 @@ body {
   max-width: 140%;
   padding: 1rem;
   padding-bottom: 0rem;
-  margin-top: 220px;
+  margin-top: 100px;
 }
 .signup-text {
   color: rgb(253, 252, 252);
@@ -62,8 +57,7 @@ body {
   display: inline-block;
   margin: 1rem auto;
   min-width: 10px;
-  /* margin-left: 150px; */
-  width: 8rem; 
+  width: 10rem; 
   height: 2.5rem;
   padding: .25rem;
   transition: 250ms background ease-in;
@@ -75,4 +69,8 @@ body {
 .signup-header {
     font-size: 40px;
     font-weight: bold;
+}
+
+img {
+  height: 90px;
 }
