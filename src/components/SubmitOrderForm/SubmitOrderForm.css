@@ -1,0 +1,25 @@
+
+  .guest-food-order-table {
+    border-collapse: collapse;
+    font-size: 23px;
+    display: inline-block;
+  }
+  .guest-table-th {
+    background-color: rgb(91, 11, 116);
+    font-weight: bold;
+  }
+  .guest-table-th, .guest-table-td {
+    border: 2px solid rgb(91, 11, 116);
+    line-height: 1rem;
+    padding: .5rem;
+    text-align: left;
+  }
+
+  .select-order {
+      font-size: 30px;
+  }
+
+  .order-form {
+      display: flex;
+      flex-direction: row;
+  }

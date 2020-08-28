@@ -37,7 +37,6 @@ class LoginPage extends Component {
   render() {
     return (
       <>
-      <Link className="dashboard-signup" to='/'>Home</Link>
         <form class="login-form" onSubmit={this.handleSubmit}>
           <header className="login-header">Lunch Bunch</header>
             <p class="login-text">

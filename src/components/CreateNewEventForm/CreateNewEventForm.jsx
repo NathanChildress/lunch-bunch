@@ -61,36 +61,36 @@ class CreateNewEventForm extends React.Component {
     render () {
         return (
         <form onSubmit={this.handleSubmit}>
-            <label>
-                Enter Name of Event:&nbsp;
+            <label className="select-order">
+                Name of Event:&nbsp;
                 <input type="text" name="name" onChange={this.handleChange}/>
 
             </label><br/><br/>
 
-            <label>Delivery Date/Time:&nbsp;</label>
+            <label className="select-order">Delivery Date/Time:&nbsp;</label>
             <input type="datetime-local" name="eventTime" onChange={this.handleChange}/>
             <table>
                 <tr>
-                <label> Guest Name
+                <label className="select-order"> Guest Name:&nbsp;
                     <input type="text" name="guest1" onChange={this.handleChange}/>
                 </label>
-                <label> Guest Location
+                <label className="select-order">Address: &nbsp;
                     <input type="text" name="location1" onChange={this.handleChange}/>
                 </label>
             </tr>
             <tr>
-                <label> Guest Name
+                <label className="select-order"> Guest Name:&nbsp;
                     <input type="text" name="guest2" onChange={this.handleChange}/>
                 </label>
-                <label> Guest Location
+                <label className="select-order">Address: &nbsp;
                     <input type="text" name="location2" onChange={this.handleChange}/>
                 </label>
             </tr>
             <tr>
-                <label> Guest Name
+                <label className="select-order"> Guest Name:&nbsp;
                 <input type="text" name="guest3" onChange={this.handleChange}/>
                 </label>
-                <label> Guest Location
+                <label className="select-order">Address: &nbsp;
                     <input type="text" name="location3" onChange={this.handleChange}/>
                 </label>
             </tr>
@@ -104,3 +104,43 @@ class CreateNewEventForm extends React.Component {
 }
 
 export default CreateNewEventForm;
+
+{/* <form onSubmit={this.handleSubmit}>
+<label className="select-order">
+    Name of Event:&nbsp;
+    <input type="text" name="name" onChange={this.handleChange}/>
+
+</label><br/><br/>
+
+<label className="select-order">Delivery Date/Time:&nbsp;</label>
+<input type="datetime-local" name="eventTime" onChange={this.handleChange}/>
+<table>
+    <tr>
+    <label className="select-order"> Guest Name:&nbsp;
+        <input type="text" name="guest1" onChange={this.handleChange}/>
+    </label>
+    <label className="select-order">Address: &nbsp;
+        <input type="text" name="location1" onChange={this.handleChange}/>
+    </label>
+</tr>
+<tr>
+    <label className="select-order"> Guest Name:&nbsp;
+        <input type="text" name="guest2" onChange={this.handleChange}/>
+    </label>
+    <label className="select-order">Address: &nbsp;
+        <input type="text" name="location2" onChange={this.handleChange}/>
+    </label>
+</tr>
+<tr>
+    <label className="select-order"> Guest Name:&nbsp;
+    <input type="text" name="guest3" onChange={this.handleChange}/>
+    </label>
+    <label className="select-order">Address: &nbsp;
+        <input type="text" name="location3" onChange={this.handleChange}/>
+    </label>
+</tr>
+</table>
+
+<button className="btn btn-default" disabled={this.isFormInvalid()}>Create Event</button>
+ <br/>
+</form> */}

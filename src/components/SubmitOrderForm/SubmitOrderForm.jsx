@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import EventsService from '../../utils/eventsService'
+import './SubmitOrderForm.css';
 
 class SubmitOrderForm extends Component {
     constructor(props){
@@ -75,9 +76,36 @@ class SubmitOrderForm extends Component {
       
     render() {
         return (
+            <div className="order-form">
+            <table className="guest-food-order-table">
+                <thead>
+                <tr>
+                    <th className="guest-table-th">Guest</th>
+                    <th className="guest-table-th">Restaurant</th>
+                    <th className="guest-table-th">Food</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td className="guest-table-td">test</td>
+                    <td className="guest-table-td">test</td>
+                    <td className="guest-table-td">test</td>
+                </tr>
+                <tr>
+                    <td className="guest-table-td"></td>
+                    <td className="guest-table-td"></td>
+                    <td className="guest-table-td"></td>
+                </tr>
+                <tr>
+                    <td className="guest-table-td"></td>
+                    <td className="guest-table-td"></td>
+                    <td className="guest-table-td"></td>
+                </tr>
+                </tbody>
+            </table>
             <div>
                 {this.props.name}<br></br>
-                <label>Select your Guest</label>
+                <label className="select-order">Select Guest:</label>
                 <select name="guest" onChange={this.handleChange}>
                 {(this.props.guests || [{name: ""}]).map((guest, idx) =>
                 <option value={JSON.stringify(guest)}> {guest.name} </option> 
@@ -118,6 +146,8 @@ class SubmitOrderForm extends Component {
             </button>
         </Link>
         </div>
+        </div>
+
         )
     }
 }

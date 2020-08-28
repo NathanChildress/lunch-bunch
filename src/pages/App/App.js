@@ -8,14 +8,10 @@ import DefaultPage from '../DefaultPage/DefaultPage'
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import eventService from '../../utils/eventsService';
-import AddGuestsPage from '../AddGuestsPage/AddGuestsPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import AddFoodOrderPage from '../AddFoodOrderPage/AddFoodOrderPage';
 import OrderConfirmationPage from '../OrderConfirmationPage/OrderConfirmationPage';
 import yelpService from '../../utils/yelpService';
-
-
-
 
 class App extends Component {
   constructor() {
@@ -127,21 +123,12 @@ class App extends Component {
              events={this.state.events}
              />
            }
-           />
-           <Route exact path='/add-guests' render={(history) => 
-            <AddGuestsPage
-            history={history}
-            user={this.state.user}
-            events={this.state.events}
-            handleGetUserEvents={this.handleGetUserEvents}
-            />
-          }
           />
            <Route exact path='/add-food-order' render={(history) => 
             <AddFoodOrderPage
-              history={history}
-              user={this.state.user}
-              events={this.state.events}
+            history={history}
+            user={this.state.user}
+            events={this.state.events}
             />
           }
           />
