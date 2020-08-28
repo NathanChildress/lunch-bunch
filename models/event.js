@@ -9,7 +9,9 @@ const eventSchema = new Schema({
   attendees: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
   guests: [{
       name: String,
-      address: String
+      address: String,
+      restraunt: String,
+      menuItem:String,
     }],
   desc: String,
 }, {
