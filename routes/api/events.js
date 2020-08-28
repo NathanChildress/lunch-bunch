@@ -9,6 +9,7 @@ router.get('/:id/delete', eventsCtrl.delete);
 /*------Protected Routes -----*/
 router.use(require('../../config/auth'));
 router.post('/', checkAuth, eventsCtrl.create);
+router.put('/', checkAuth, eventsCtrl.update);
 router.delete('/:id/delete', checkAuth, eventsCtrl.delete);
 // router.post('/', eventsCtrl.create);
 //router.delete('/:id/delete', eventsCtrl.delete);

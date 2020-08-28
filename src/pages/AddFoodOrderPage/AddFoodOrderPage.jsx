@@ -33,7 +33,7 @@ class AddFoodOrderPage extends Component {
                 <h3>Add your Order</h3>
                 <label>Select your event to Order</label>
                 <select name="event" onChange={this.handleChange}>
-                {this.props.events.map((event, idx) =>
+                {(this.props.events || []).map((event, idx) =>
                 <option value={JSON.stringify(event)}> {event.name} </option> 
                 )}
                 </select>

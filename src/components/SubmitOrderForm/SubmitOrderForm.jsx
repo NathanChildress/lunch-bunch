@@ -1,9 +1,36 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import EventsService from '../../utils/eventsService'
 
 class SubmitOrderForm extends Component {
     constructor(props){
         super(props)
+        this.state= {
+            name: "",
+            location: "",
+            restaurant: 3,
+            menuItem: "",
+            shops: [
+                {
+                    name: "Chipotle",
+                    items: ["Burrito","Bowl","Quesadillas"]
+
+                }, {
+                    name: "Jimmy Johns",
+                    items: ["The Pepe","Big John","Totally Tuna", "Turkey Tom", "Vito", "The Veggie"]
+                }, {
+                    name: "Panda Express",
+                    items: ["Orange Chicken","Honey Sesame Chicken","String Bean Chicken",
+                     "Sweet Fire Chicken", "Black Pepper Angus Steak", "Mushroom Chicken",
+                    "Black Pepper Chicken", "Grilled Teriyaki Chicken", "Chow Mein", "Fried Rice",
+                    "Steamed Rice"] 
+                }, {
+                    name: "",
+                    items: []
+                }
+
+            ],
+        }
         this.handleChange = this.handleChange.bind(this);
         //this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -17,11 +44,69 @@ class SubmitOrderForm extends Component {
         });
       }
 
+      handleSubmit = async(event) => {
+        console.log('A name was submitted: ' + this.state.name);
+        event.preventDefault();
+        try {
+            await EventsService.updateEvent({
+                "name": this.state.name,
+                "owner": this.props.user._id,
+                "eventTime": this.state.eventTime,
+                "guests" : [{
+                    name: this.state.guest1,
+                    address: this.state.location1
+                    },{
+                        name: this.state.guest2,
+                        address: this.state.location2
+                    }, {
+                        name: this.state.guest3,
+                        address: this.state.location3
+                    }
+                ]
+                
+            });
+        } catch(err) {
+            console.log(err)
+        }
+        this.props.history.push('/dashboard');
+      } 
+
       
     render() {
         return (
             <div>
                 {this.props.name}<br></br>
+                <label>Select your Guest</label>
+                <select name="guest" onChange={this.handleChange}>
+                {(this.props.guests || [{name: ""}]).map((guest, idx) =>
+                <option value={JSON.stringify(guest)}> {guest.name} </option> 
+                )}
+                </select>
+            <table>
+
+                <>
+                <tr>
+                    <td>{this.state.name}</td>
+                    <td>
+                        <select name="restaurant" onChange={this.handleChange}>
+                        {this.state.shops.map((shop, idx) =>
+                            <option value={idx}> {shop.name} </option> 
+                            )}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{this.state.location}</td>
+                    <td>
+                        <select name="menuItem" >
+                        {this.state.shops[this.state.restaurant].items.map((item, idx) =>
+                            <option value={item}> {item} </option> 
+                            )}
+                        </select>
+                    </td>
+                </tr>
+               </>
+            </table>
             <Link to="order-confirmation" className='NavBar-link'>
             <button>
             

@@ -31,7 +31,7 @@ function create(event) {
     return fetch(BASE_URL, options).then(res => res.json());
 }
 
-function updateEvent(event) {
+function updateEvent(eventId, event) {
     const options = {
         method: 'PUT',
         headers: {
@@ -40,7 +40,7 @@ function updateEvent(event) {
         },
         body: JSON.stringify(event)
     };
-    return fetch(BASE_URL, options).then(res => res.json());
+    return fetch(BASE_URL + `/${eventId}/update`, options).then(res => res.json());
 }
 
 function delEvent(eventId) {
