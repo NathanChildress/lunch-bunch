@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SubmitOrderForm from '../../components/SubmitOrderForm/SubmitOrderForm';
-
+import './AddFoodOrderPage.css'
 
 class AddFoodOrderPage extends Component {
     constructor (props) {
@@ -30,8 +30,8 @@ class AddFoodOrderPage extends Component {
     render() {
         return (
             <div>
-                <h3>Add your Order</h3>
-                <label>Select your event to Order</label>
+                <h3 className="order-heading">Add your Order 🍔</h3>
+                <label className="select-order">Select your event: </label>
                 <select name="event" onChange={this.handleChange}>
                 {(this.props.events || []).map((event, idx) =>
                 <option value={JSON.stringify(event)}> {event.name} </option> 

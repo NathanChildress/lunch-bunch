@@ -8,8 +8,8 @@ import './DashboardPage.css';
 const DashboardPage = (props) => {
     return (
         <>
-        <Link className="dashboard-signup" to='/'>Home</Link>
-      
+        <h3 className="order-heading">{props.user.name}'s Dashboard 🍔</h3>
+         
         <div>
 
         <DashboardEventList 

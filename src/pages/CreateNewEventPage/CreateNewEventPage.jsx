@@ -9,7 +9,9 @@ const CreateNewEventPage = (props) => {
     return (
           
         <div>
-            <h2>Create New Delivery Event</h2><br/>
+        <h3 className="order-heading">Create New Delivery Event 🍔</h3>
+            
+            
             <CreateNewEventForm 
                 user={props.user}
                 events={props.events}
