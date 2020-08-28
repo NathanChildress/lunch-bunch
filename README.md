@@ -38,6 +38,10 @@ Lunch Bunch is an application for organizers to plan synchronized meal deliverie
 
 ![](https://i.imgur.com/6mB3pCJ.png)
 
+![](https://i.imgur.com/ueHwzNU.png)
+![](https://i.imgur.com/yhdPOty.png)
+
+
 ## Future Features
 
 - Implement Postmates & Yelp API

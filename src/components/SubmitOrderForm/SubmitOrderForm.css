@@ -23,3 +23,28 @@
       display: flex;
       flex-direction: row;
   }
+
+  .order-submit-btn {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    display: inline-block;
+    margin: 1rem auto;
+    min-width: 10px;
+    width: 15rem; 
+    height: 2.5rem;
+    padding: .25rem;
+    transition: 250ms background ease-in;
+    cursor: pointer;
+    font-size: 25px;
+  }
+
+  .sel-guest {
+    width: 15rem;
+    height: 3rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white ;
+    font-size: 22px;
+    margin: 10px;
+  }
