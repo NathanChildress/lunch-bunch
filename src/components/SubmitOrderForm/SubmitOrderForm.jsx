@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import EventsService from '../../utils/eventsService'
 
 class SubmitOrderForm extends Component {
     constructor(props){
@@ -42,6 +43,33 @@ class SubmitOrderForm extends Component {
           [e.target.name]: JSON.parse(e.target.value)
         });
       }
+
+      handleSubmit = async(event) => {
+        console.log('A name was submitted: ' + this.state.name);
+        event.preventDefault();
+        try {
+            await EventsService.updateEvent({
+                "name": this.state.name,
+                "owner": this.props.user._id,
+                "eventTime": this.state.eventTime,
+                "guests" : [{
+                    name: this.state.guest1,
+                    address: this.state.location1
+                    },{
+                        name: this.state.guest2,
+                        address: this.state.location2
+                    }, {
+                        name: this.state.guest3,
+                        address: this.state.location3
+                    }
+                ]
+                
+            });
+        } catch(err) {
+            console.log(err)
+        }
+        this.props.history.push('/');
+      } 
 
       
     render() {
