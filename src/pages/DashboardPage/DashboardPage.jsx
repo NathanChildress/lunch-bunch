@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AddGuestsForm from '../../components/AddGuestsForm/AddGuestsForm';
 import { render } from '@testing-library/react';
 import DashboardEventList from '../../components/DashboardEventList/DashboardEventList';
 import './DashboardPage.css';

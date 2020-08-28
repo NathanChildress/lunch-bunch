@@ -15,7 +15,7 @@ const CreateNewEventPage = (props) => {
                 events={props.events}
                 history={props.history}
                 /> 
-            <Link to="add-guests" className='new-guests-submit'>Next: Add Guests</Link>
+            <Link to="" className='new-guests-submit'>Next: Add Guests</Link>
         </div>
        
     )
