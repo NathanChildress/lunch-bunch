@@ -13,22 +13,14 @@ const SubmitOrderTally = props => {
                 </tr>
                 </thead>
                 <tbody>
-                    {}
+                {props.guestOrders.map((order, idx) =>
                 <tr>
-                    <td className="guest-table-td">test</td>
-                    <td className="guest-table-td">test</td>
-                    <td className="guest-table-td">test</td>
-                </tr>
-                <tr>
-                    <td className="guest-table-td"></td>
-                    <td className="guest-table-td"></td>
-                    <td className="guest-table-td"></td>
-                </tr>
-                <tr>
-                    <td className="guest-table-td"></td>
-                    <td className="guest-table-td"></td>
-                    <td className="guest-table-td"></td>
-                </tr>
+                    <td className="guest-table-td">{order.guestName}</td>
+                    <td className="guest-table-td">{order.restaurant}</td>
+                    <td className="guest-table-td">{order.menuItem}</td>
+                </tr> 
+                )}
+
                 </tbody>
             </table>
 )

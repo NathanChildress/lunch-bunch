@@ -49,6 +49,7 @@ class SubmitOrderForm extends Component {
 
       handleClick = (e) => {
         let newOrder = {
+            guestName : this.state.guest.name,
             guestId : this.state.guest._id,
             restaurant : this.state.shops[this.state.restaurant].name,
             menuItem : this.state.shops[this.state.restaurant].items[this.state.menuItem]
