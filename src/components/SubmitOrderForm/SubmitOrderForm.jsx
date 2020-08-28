@@ -83,20 +83,15 @@ class SubmitOrderForm extends Component {
                 guestOrders={this.state.guestOrders}
             />
             <div>
-                {this.props.name}<br></br>
-                <label className="select-order">Select Guest:</label>
-                <select name="guest" onChange={this.handleChange}>
-                {(this.props.guests || [{name: ""}]).map((guest, idx) =>
-                <option value={JSON.stringify(guest)}> {guest.name} </option> 
-                )}
-                </select>
             <table>
 
                 <>
                 <tr>
                     <td>{this.state.name}</td>
                     <td>
-                        <select name="restaurant" onChange={this.handleChange}>
+                        <select className="sel-guest" name="restaurant" onChange={this.handleChange}>
+                        <option value="selected">Select Restaurant</option>
+
                         {this.state.shops.map((shop, idx) =>
                             <option value={idx}> {shop.name} </option> 
                             )}
@@ -106,7 +101,9 @@ class SubmitOrderForm extends Component {
                 <tr>
                     <td>{this.state.location}</td>
                     <td>
-                        <select name="menuItem" >
+                        <select className="sel-guest" name="menuItem" >
+                    <option value="selected">Select Menu Item</option>
+                            
                         {this.state.shops[this.state.restaurant].items.map((item, idx) =>
                             <option value={idx}> {item} </option> 
                             )}
@@ -114,12 +111,19 @@ class SubmitOrderForm extends Component {
                     </td>
                 </tr>
                 <tr>
-                    <button name="guestOrder" onClick={this.handleClick}>Add Guest Order</button>
+                    <button className='order-submit-btn' name="guestOrder" onClick={this.handleClick}>Add Guest Order</button>
                 </tr>
                </>
             </table>
+                {this.props.name}<br></br>
+                <select placeholder="Select Guest" className="sel-guest" name="guest" onChange={this.handleChange}>
+                    <option value="selected">Select Guest</option>
+                {(this.props.guests || [{name: ""}]).map((guest, idx) =>
+                <option value={JSON.stringify(guest)}> {guest.name} </option> 
+                )}
+                </select>
             <Link to="order-confirmation" className='NavBar-link' onClick={this.handleSubmit}>
-            <button>
+            <button className='order-submit-btn'>
             
             Submit Order
             </button>
@@ -132,3 +136,71 @@ class SubmitOrderForm extends Component {
 }
 
 export default SubmitOrderForm;
+
+{/* <div>
+<form className="signup-form" onSubmit={this.handleSubmit} >
+<header className="signup-header">Sign Up</header>
+  <p class="signup-text">
+    <span>
+      <i><img src="https://i.imgur.com/2OB3dfx.png" alt=""/></i>
+    </span>
+  </p>
+      <input type="text" className="signup-username" autofocus="true" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
+      <input type="email" className="signup-username" autofocus="true" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+      <input type="password" className="signup-password" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
+      <input type="password" className="signup-password" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
+      <Link className="cancel-link" to='/'>Cancel</Link>
+      <button className="signup-submit" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp; 
+</form>
+</div>
+
+
+
+<div className="order-form">
+<SubmitOrderTally
+    guestOrders={this.state.guestOrders}
+/>
+<div>
+    {this.props.name}<br></br>
+    <label className="select-order">Select Guest:</label>
+    <select name="guest" onChange={this.handleChange}>
+    {(this.props.guests || [{name: ""}]).map((guest, idx) =>
+    <option value={JSON.stringify(guest)}> {guest.name} </option> 
+    )}
+    </select>
+<table>
+
+    <>
+    <tr>
+        <td>{this.state.name}</td>
+        <td>
+            <select name="restaurant" onChange={this.handleChange}>
+            {this.state.shops.map((shop, idx) =>
+                <option value={idx}> {shop.name} </option> 
+                )}
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>{this.state.location}</td>
+        <td>
+            <select name="menuItem" >
+            {this.state.shops[this.state.restaurant].items.map((item, idx) =>
+                <option value={idx}> {item} </option> 
+                )}
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <button name="guestOrder" onClick={this.handleClick}>Add Guest Order</button>
+    </tr>
+   </>
+</table>
+<Link to="order-confirmation" className='NavBar-link' onClick={this.handleSubmit}>
+<button>
+
+Submit Order
+</button>
+</Link>
+</div>
+</div>  */}
