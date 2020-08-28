@@ -1,5 +1,20 @@
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700); */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 
+.cancel-link {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    display: inline-block;
+    margin: .1rem auto;
+    width: 4rem;
+    height: 1.5rem;
+    padding: 0rem;
+    transition: 250ms background ease-in;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 110px;
+}
 
 body {
   font-family: 'Open Sans';
@@ -7,15 +22,17 @@ body {
   overflow: hidden;
 }
 
-.login-form {
+.signup-form {
   background: rgb(83, 14, 110);
   box-shadow: 0 0 1rem rgb(68, 3, 87);
-  min-height: 15rem;
+  min-height: 10rem;
   margin: auto;
   max-width: 140%;
-  padding: 3rem;
+  padding: 1rem;
+  padding-bottom: 0rem;
+  margin-top: 220px;
 }
-.login-text {
+.signup-text {
   color: rgb(253, 252, 252);
   font-size: 3rem;
   margin: 0 auto;
@@ -24,7 +41,7 @@ body {
   text-align: center;
 }
 
-.login-username, .login-password {
+.signup-username, .signup-password {
   background: white;
   border: 0 solid;
   border-bottom: 1px solid rgba(white, .5);
@@ -38,14 +55,15 @@ body {
   font-size: 20px;
 }
 
-.login-submit {
-  border: 1px solid white;
+.signup-submit {
+  border: 2px solid white;
   background: transparent;
   color: white;
-  display: block;
+  display: inline-block;
   margin: 1rem auto;
   min-width: 10px;
-  width: 8rem;
+  /* margin-left: 150px; */
+  width: 8rem; 
   height: 2.5rem;
   padding: .25rem;
   transition: 250ms background ease-in;
@@ -53,6 +71,8 @@ body {
   font-size: 25px;
 }
 
-.login-header {
-  font-weight: bold;
+
+.signup-header {
+    font-size: 40px;
+    font-weight: bold;
 }

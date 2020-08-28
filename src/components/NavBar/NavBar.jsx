@@ -12,7 +12,7 @@ const NavBar = (props) => {
   </ul>
   :
   <ul className='NavBar'>
-    <li><a><Link to="/login" className='NavBar-link'>Log In</Link></a></li>
+    <li><a><Link to="/login" className='NavBar-link'>Login</Link></a></li>
     <li><a><Link to="/signup" className='NavBar-link'>Sign Up</Link></a></li>
     <li className="AppLogo">&nbsp;&nbsp;Lunch Bunch &nbsp;&nbsp;🍔</li>
   </ul>;
